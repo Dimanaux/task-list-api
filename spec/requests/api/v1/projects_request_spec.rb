@@ -10,7 +10,7 @@ RSpec.describe 'Api::V1::Projects', type: :request do
 
     it 'returns ok' do
       json_response = JSON.parse(response.body)
-      expect(json_response).to eq(message: 'ok')
+      expect(json_response).to eq('message' => 'ok')
     end
   end
 end
