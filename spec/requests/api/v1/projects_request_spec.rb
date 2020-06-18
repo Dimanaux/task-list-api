@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Api::V1::Projects', type: :request do
   describe 'GET #index' do
-    before { get '/index' }
+    before { get '/api/v1/projects' }
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
