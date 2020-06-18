@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Projects', type: :request do
+RSpec.describe 'Projects', type: :request do
   describe 'GET #index' do
-    before { get '/api/v1/projects' }
+    before { get '/projects' }
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
