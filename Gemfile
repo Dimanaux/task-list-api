@@ -10,6 +10,7 @@ gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
+gem 'factory_bot_rails'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -18,7 +19,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
