@@ -26,6 +26,7 @@ RSpec.describe 'projects', type: :request do
     let(:request) { post projects_url, params: { project: valid_attributes } }
 
     it 'creates project' do
+      expect { request }.to  change(Project, :count).by(1)
     end
   end
 end
