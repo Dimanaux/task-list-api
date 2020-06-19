@@ -1,4 +1,4 @@
-RSpec.shared_context "with json response" do
+RSpec.shared_context 'with json response' do
   let(:body) { JSON.parse(response.body) }
 
   let(:raw_fixture) do

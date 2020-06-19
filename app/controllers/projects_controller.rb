@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  expose :projects, ->{ Project.all }
+  expose :projects, -> { Project.all }
   expose :project
 
   def index
@@ -24,9 +24,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def destroy
-    project.destroy
-  end
+  delegate :destroy, to: :project
 
   private
 

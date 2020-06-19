@@ -1,5 +1,5 @@
 seed_file = Rails.root.join('db/seeds/seeds.yml')
-config = YAML::load_file(seed_file)
+config = YAML.load_file(seed_file)
 
 config['projects'].each do |project_attrs|
   FactoryBot.create(:project, project_attrs.except('todos')) do |project|

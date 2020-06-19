@@ -1,5 +1,5 @@
 class Projects::TodosController < ApplicationController
-  expose :project, id: ->{ params[:project_id] }
+  expose :project, id: -> { params[:project_id] }
   expose :todos, from: :project
   expose :todo, parent: :project
 
@@ -25,14 +25,12 @@ class Projects::TodosController < ApplicationController
     end
   end
 
-  def destroy
-    todo.destroy
-  end
+  delegate :destroy, to: :todo
 
   private
 
   def todo_params
     params.require(:todo).permit(:text, :isCompleted).to_h
-      .transform_keys(&:underscore)
+          .transform_keys(&:underscore)
   end
 end
