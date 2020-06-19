@@ -1,0 +1,13 @@
+[
+  {
+    "id": :project_id,
+    "title": "Conquer the world",
+    "todos": [
+      {
+        "id": :todo_id,
+        "text": "Start with default city",
+        "isCompleted": false
+      }
+    ]
+  }
+]
