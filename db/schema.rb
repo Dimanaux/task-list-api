@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_183035) do
+ActiveRecord::Schema.define(version: 2020_06_18_183317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,14 @@ ActiveRecord::Schema.define(version: 2020_06_18_183035) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "todos", force: :cascade do |t|
+    t.string "text"
+    t.boolean "is_completed", default: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_todos_on_project_id"
+  end
+
+  add_foreign_key "todos", "projects"
 end
